@@ -7,7 +7,7 @@ namespace WeatherApplication.Service
         private static readonly List<Request> _requests = new List<Request>();
 
         private const double _perHourInSeconds = 3600;
-        private const int _rateLimit = 1;
+        private const int _rateLimit = 5;
 
         public string CheckLimiter(string apiKey)
         {
