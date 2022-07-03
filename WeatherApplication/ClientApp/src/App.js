@@ -13,7 +13,7 @@ function App() {
     const [state, setState] = React.useState({ forecast: "not set yet", loading: true });
 
     const renderForecast = () => {
-        return state.forecast === "OutOfLimit" ? <div>Too many request made. Please Try later.</div> : <div>Forecast is {state.forecast}</div>;
+        return state.forecast === "OutOfLimit" ? <div>Too many requests made. Please Try later.</div> : <div>Forecast is {state.forecast}</div>;
     };
 
     let contents = state.loading
