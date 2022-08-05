@@ -11,4 +11,4 @@ Please note that it is a work in progress and following can be implemented:
 TO DO:
   - Dependency injection
   - Unit test for API
-  - Validation of the API keys
+  - Validation for the API keys
