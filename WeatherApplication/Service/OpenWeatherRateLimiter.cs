@@ -11,13 +11,13 @@
             _rateLimiter = new RateLimiter();
         }
 
-        public async Task<string?> GetLatestWeather(string location)
+        public async Task<string?> GetLatestWeather(string location, string baseUrl)
         {
             foreach(string apiKey in _apiKeys) {
                 var result = _rateLimiter.CheckLimiter(apiKey);
                 if (result.Equals("WithInLimit")) { 
                     var notFound = "not found.";
-                    OpenWeatherResponse openWeatherResponse = await _openWeatherClient.GetLatestWeather(location, apiKey);
+                    OpenWeatherResponse openWeatherResponse = await _openWeatherClient.GetLatestWeather(location, apiKey, baseUrl);
                     if (!new HttpResponseMessage(openWeatherResponse.StatusCode).IsSuccessStatusCode)
                     {
                         return notFound;

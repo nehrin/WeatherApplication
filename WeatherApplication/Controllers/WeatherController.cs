@@ -11,11 +11,18 @@ namespace WeatherApplication.Controllers
     {
         
         private IOpenWeatherRateLimiter openWeatherRateLimiter = new OpenWeatherRateLimiter();
+        private IConfiguration _configuration;
+
+        public WeatherController(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
 
         [HttpGet("location/{location}")]
         public async Task<string> GetAsync(string location)
         {
-            return await openWeatherRateLimiter.GetLatestWeather(location) ?? "not found.";
+            var baseUrl = _configuration.GetValue<string>("baseUrl");
+            return await openWeatherRateLimiter.GetLatestWeather(location, baseUrl) ?? "not found.";
         }
     }
 }

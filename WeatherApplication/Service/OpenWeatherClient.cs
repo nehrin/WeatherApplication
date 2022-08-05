@@ -13,11 +13,11 @@ namespace WeatherApplication.Service
             _client = client;
         }
 
-        public async Task<OpenWeatherResponse> GetLatestWeather(string location, string apiKey)
+        public async Task<OpenWeatherResponse> GetLatestWeather(string location, string apiKey, string baseUrl)
         {
             var query =
                 $"q={location}&appid={apiKey}";
-            var endPoint = "https://api.openweathermap.org/data/2.5/weather?"+query;
+            var endPoint = baseUrl + query;
             var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, endPoint);
             var response = await _client.SendAsync(httpRequestMessage);
             var responseString = await response.Content.ReadAsStringAsync();
