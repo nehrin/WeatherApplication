@@ -6,3 +6,9 @@ To Run please clone the code to your local folder and have a visual studio suita
 Please open the solution in the visual studio and run WeatherApplication. API and front end React applications are configured to run simultaneously when you Run WeatherApplication.
 
 The application contains 5 api keys to use https://openweathermap.org/. It applies a rate limiter which only allows 5 requests for each api key per hour. It alternates each key when limit is reached on any given key. If all api keys reached limit for requesting, it prompts the user saying too many requests made.
+
+Please note that it is a work in progress and following can be implemented:
+TO DO:
+  - Dependency injection
+  - Unit test for API
+  - Validation of the API keys
