@@ -1,6 +1,6 @@
 # WeatherApplication
 
-This application is a front end React js application backed up by C# .NET 6.0 web api.
+This application is a front end React js application backed up by C# .NET 6.0 web api. The back-end API enforces rate limiting then calls OpenWeatherMap.com with its API keys. API Key is rate limited to 5 weather reports an hour.
 
 To Run please clone the code to your local folder and have a visual studio suitable for running .NET 6.0 preferably visual studio 2022 with react js.
 Please open the solution in the visual studio and run WeatherApplication. API and front end React applications are configured to run simultaneously when you Run WeatherApplication.
